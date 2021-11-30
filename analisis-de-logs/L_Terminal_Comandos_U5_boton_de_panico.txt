@@ -1,0 +1,10 @@
+
+(⊙_◎) BOTÓN DE PÁNICO - U5 Linux Comandos
+versión 26 Agosto 2021.
+
+Los problemas de configuración en este servidor son los siguientes:
+
+-> El directory index del servidor Apache está apuntando a wrongindex.html cuando debería apuntar a index.php.
+-> La línea 29 del archivo config/mysql/my.cnf debería estar comentada.
+-> La base de datos en el archivo index.php está errada.
+-> El puerto de mysql en el docker-compose está mal referenciado
