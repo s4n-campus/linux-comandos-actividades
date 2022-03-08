@@ -1,0 +1,20 @@
+Lo primero que debes hacer es crear la estructura de directorios, con el flag "-p" la creamos toda al tiempo:
+
+mkdir -p root/Documents root/Music root/Photos root/Symbolic root/Music/Blues root/Music/Jazz root/Music/Classic root/Music/Electronic root/Music/Funk root/Music/Instrumental alejo/Music/Jazz root/Music/Reggae root/Music/Rock/70s-80s 
+
+Ahora con touch se crean los archivos:
+
+touch root/Documents/file1.txt root/Documents/file2.txt root/Documents/file3.txt 
+
+Luego se descargan y almacenan los archivos:
+
+wget https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3 -O root/Music/Rock/70s-80s/audio1.mp3 && wget 
+https://file-examples.com/wp-content/uploads/2017/10/file_example_JPG_100kB.jpg -O root/Photos/photo1.jpg 
+
+Finalmente llenamos los datos en los archivos de texto:
+
+echo "Hola Mundo!" > root/Documents/file1.txt && date > root/Documents/file2.txt && curl ifconfig.me > root/Documents/file3.txt 
+
+Finalmente creamos el enlace simbólico:
+
+ln -s root/Documents/file3.txt root/Symbolic/symbolic3.txt 
