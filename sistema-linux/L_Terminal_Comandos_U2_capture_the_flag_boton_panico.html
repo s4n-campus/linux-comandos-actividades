@@ -1,0 +1,39 @@
+Botón de pánico.
+
+Si te sientes frustrado no te preocupes, queremos ayudarte a que el aprendizaje sea más fácil para tí, por tal razón hemos dispuesto de este botón de pánico para que puedas desarrollar correctamente la actividad.
+
+1. Para iniciar la actividad, crea una carpeta llamada 'config' (sin comillas):
+
+	- mkdir config
+
+2. Haz que la carpeta config contenga un archivo oculto llamado 'connection' (sin comillas):
+
+	- touch config/.connection
+
+3. Crea un usuario en el sistema llamado usuario1 (sin comillas):
+
+	- useradd usuario1
+
+4. Haz que el usuario usuario1 sea el propietario de la carpeta 'config':
+
+	- chown -R usuario.usuario config
+
+5. Crea una carpeta llamada 'website' dentro de 'config' y haz que sus permisos sean 'r-xr-xr-x' (sin comillas):
+
+	- mkdir config/website
+	- chmod -R 555 config/website
+
+6. Crea una carpeta llamada 'docs' dentro de 'config' y haz que sus permisos sean todos solo para su propietario:
+
+	- mkdir config/docs
+	- chmod 700 config/docs
+
+7. Configura el archivo oculto '.connection' dentro de 'config' de manera que no pueda ser eliminado:
+
+	- chattr +i config/.connection
+
+8. Configura la carpeta config y todas sus subcarpetas de manera que su propietario sea el usuario usuario1 y su grupo sea root
+es posible que por el archivo que inmutable del punto anterior no puedas hacerlo, quitale la inmutabilidad antes de continuar.
+
+	- chattr -i config/.connection
+	- chown -R usuario1.root config/
